@@ -1,0 +1,57 @@
+
+head{
+    margin:0px 0px 0px 0px;
+}
+body{
+    margin:0px 0px 0px 0px;
+}
+.nav-bar{
+    height: auto;
+}
+.title{
+    float: left;
+    width: 100%;
+    background-color:red;
+    text-align: center;
+    font-family: cursive;
+}
+.login{
+    padding-top:20%;
+    align-items: center;
+    text-align: center;
+}
+.register{
+    align-items: center;
+    text-align: center;
+}
+.form-login{
+    border: 1px solid black;
+    position: absolute;
+    margin-top:-80px;
+    margin-left:-130px;
+    top:40%;
+    left:45%;
+    padding: 20px;
+    border-radius: 5%;
+    z-index: 1;
+    /* background-color */
+}
+.form-register{
+    border: 1px solid black;
+    position: absolute;
+    margin-top:-150px;
+    margin-left:-160px;
+    top:40%;
+    left:45%;
+    padding: 20px;
+    border-radius: 5%;
+    z-index: 1;
+    /* background-color */
+}
+.float-left1{
+    float: right;
+}
+.align-center{
+    align-items: center;
+    text-align: center;
+}
