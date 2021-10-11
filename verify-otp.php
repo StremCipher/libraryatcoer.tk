@@ -1,10 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    session_start();
-    $otp=$_SESSION["OTP"];
+session_start();
+$otp = $_SESSION["OTP"];
+$Email = $_SESSION["Email"];
 ?>
 
 
@@ -13,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
     <!--  adding bootstrap  -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -25,8 +24,12 @@
         </div>
     </div>
 </head>
+
 <body>
-    <form class="form-login" >
+    <div>
+        <h5>Enter Otp Sent to emil: <?php echo ($Email) ?></h5>
+    </div>
+    <form class="form-login">
         <div class="form-group">
             <input type="text" class="form-control" name="otp" id="OTP" aria-describedby="emailHelp" placeholder="Enter OTP" required>
         </div>
@@ -34,22 +37,22 @@
         <button type="button" class="btn btn-warning btn-lg" id="resend-otp">Resend OTP</button>
     </form>
     <script>
-        $("#resend-otp").click(function(){
+        $("#resend-otp").click(function() {
             window.location.replace("resend-otp.php");
         });
-        $("#verify-otp").click(function(){
+        $("#verify-otp").click(function() {
             // window.location.replace("index.php");
-            var otp1=document.getElementById("OTP").value;
+            var otp1 = document.getElementById("OTP").value;
             // alert(otp1);
-            var otp2=("<?php echo($otp)?>");
+            var otp2 = ("<?php echo ($otp) ?>");
             // alert(otp2);
-            if(otp1==otp2){
+            if (otp1 == otp2) {
                 window.location.replace("logged-in.php");
-            }
-            else{
+            } else {
                 alert("otp not matches")
             }
         });
     </script>
 </body>
+
 </html>
